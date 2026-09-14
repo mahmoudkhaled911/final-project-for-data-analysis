@@ -1,0 +1,41 @@
+from preprocessing import load_data, clean_data
+from exploration import explore_data
+from visualization import (plot_user_type_distribution,plot_bike_share_distribution,plot_age_distribution,plot_age_outliers,plot_trip_duration_minutes,
+    plot_gender_distribution,plot_trip_duration_hours,plot_average_duration_by_user_type,plot_duration_by_gender,plot_duration_by_user_type,
+    plot_age_by_user_type,plot_age_by_gender,plot_correlation_matrix,plot_specific_correlations,plot_data_stat_correlations)
+from analysis import (analyze_user_type_duration,analyze_gender_duration,analyze_user_type_age,analyze_gender_age,
+                      analyze_correlations,analyze_specific_correlations,analyze_data_stat_correlations)
+df = load_data(
+    "C:/Python_Tasks/Python/final project for data analysis/Ford-GoBike-Data-Analysis/Ford_GoBike.csv"
+)
+df = clean_data(df)
+explore_data(df)
+plot_user_type_distribution(df)
+plot_bike_share_distribution(df)
+plot_age_distribution(df)
+plot_age_outliers(df)
+plot_trip_duration_minutes(df)
+plot_gender_distribution(df)
+plot_trip_duration_hours(df)
+plot_average_duration_by_user_type(df)
+print("\nAverage trip duration by user type:")
+print(analyze_user_type_duration(df))
+plot_duration_by_gender(df)
+print("\nAverage trip duration by gender:")
+print(analyze_gender_duration(df))
+plot_duration_by_user_type(df)
+plot_age_by_user_type(df)
+print("\nAverage age by user type:")
+print(analyze_user_type_age(df))
+plot_age_by_gender(df)
+print("\nAverage age by gender:")
+print(analyze_gender_age(df))
+print("\nCorrelation Matrix:")
+print(analyze_correlations(df))
+plot_correlation_matrix(df)
+print("\nCorrelation Between Age and Trip Duration:")
+print(analyze_specific_correlations(df))
+plot_specific_correlations(df)
+print("\nCorrelation Between Data Statistics:")
+print(analyze_data_stat_correlations(df))
+plot_data_stat_correlations(df)
